@@ -10,54 +10,6 @@
             - main: Main execution function.
 ## src
 ### __pycache__
-### association_manager.py
-        - HubSpotAssociationManager: Manages HubSpot object associations and their synchronization with the database.
-
-    This class handles the extraction, processing, and storage of associations between
-    different HubSpot objects. It uses batch processing to efficiently handle large
-    numbers of associations and provides functionality to validate object types,
-    process associations in batches, and save the results to a database.
-
-    Attributes:
-        MAX_BATCH_SIZE (int): Maximum number of IDs to process in a single batch.
-        hubspot (HubSpotConnector): Connector for interacting with the HubSpot API.
-        db (DatabaseManager): Manager for database operations.
-        config (AssociationConfig): Configuration for association processing.
-
-    Methods:
-        process_all_associations(): 
-            Process all configured associations.
-        
-        save_association_metadata(): 
-            Save metadata about processed associations.
-        
-        _process_batch(from_object, to_object, batch_ids): 
-            Process a single batch of IDs.
-        
-        _get_object_ids(table_name): 
-            Retrieve HubSpot object IDs from the database table.
-        
-        _extract_associations(from_object, to_object): 
-            Extract all associations between two HubSpot objects.
-        
-        _validate_object_types(from_object, to_object): 
-            Validate that both objects exist in HubSpot.
-        
-        _save_associations_to_db(associations, from_object, to_object): S
-            ave associations to the database.
-
-    The class uses batch processing and error handling to manage large-scale association
-    synchronization between HubSpot and a local database.
-            - __init__: Process a single batch of IDs.
-            - _process_batch: Process a single batch of IDs.
-            - _get_object_ids: Retrieve HubSpot object IDs from the database table.
-            - _extract_associations: Extract all associations between two HubSpot objects with batch processing.
-            - process_all_associations: Process all configured associations.
-            - _validate_object_types: Validate that both objects exist in HubSpot and are properly named.
-            - _save_associations_to_db: Save associations to the database.
-            - process_all_associations: Process all configured associations.
-            - save_association_metadata: Save metadata about processed associations.
-            - main: Main function to run the association processing.
 ### connectors.py
         - HubSpotConnector: Handles all HubSpot API interactions.
 
@@ -141,5 +93,3 @@
             table_name (str): Name of the target table
             chunk_size (int, optional): Number of rows to write at once. None for no chunking
             replace_table (bool): If True, replaces existing table. If False, appends to it
-
-...
