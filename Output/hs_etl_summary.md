@@ -1,18 +1,5 @@
 # Folder Structure
 
-## config
-### __pycache__
-### base_config.py
-        - ObjectConfig: Configuration for a HubSpot object including its columns and rules.
-        - ETLConfig: Main configuration for the ETL pipeline.
-        - AssociationConfig: Configuration for HubSpot object associations.
-            - get_default_config: Returns default association configuration.
-### object_config.py
-        - get_contacts_config: Returns the configuration for the contacts object.
-        - get_deals_config: Returns the configuration for the deals object.
-        - get_attendance_config: Returns the configuration for the contacts object.
-        - get_participants_config: Returns the configuration for the participants object.
-### settings.py
 ## logs
 ## run.py
         - PipelineRunner: Orchestrates the running of the entire ETL pipeline.
@@ -120,6 +107,7 @@
             - get_column_dict: Returns a dictionary of column names and labels for a HubSpot object.
             - get_records: Retrieves records from HubSpot for specified object and columns.
             - get_validated_columns: Validates and returns column names that exist in HubSpot.
+            
         - DatabaseManager: Handles database operations.
 
     This class provides methods to interact with a database, including 
